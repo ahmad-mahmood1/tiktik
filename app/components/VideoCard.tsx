@@ -47,7 +47,7 @@ const VideoCard: NextPage<IProps> = ({
             loop
             src={video.asset.url}
             className="w-[250px] md:w-full rounded-xl cursor-pointer"
-          ></video>
+          />
         </Link>
         <div className="flex gap-2 -mt-8 items-center ml-4">
           <p className="text-white text-lg font-medium flex gap-1 items-center">
@@ -77,7 +77,6 @@ const VideoCard: NextPage<IProps> = ({
                   className=" rounded-full"
                   src={postedBy?.image}
                   alt="user-profile"
-                  layout="responsive"
                 />
               </>
             </Link>
@@ -112,12 +111,12 @@ const VideoCard: NextPage<IProps> = ({
               loop
               ref={videoRef}
               src={video.asset.url}
-              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
-            ></video>
+              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[250px] rounded-2xl cursor-pointer bg-gray-100"
+            />
           </Link>
 
           {isHover && (
-            <div className="absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3">
+            <div className="bg-gray-200 bg-opacity-50 absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3">
               {playing ? (
                 <button onClick={onVideoPress}>
                   <BsFillPauseFill className="text-black text-2xl lg:text-4xl" />
