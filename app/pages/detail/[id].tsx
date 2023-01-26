@@ -53,7 +53,6 @@ const Detail = ({ postDetails }: IProps) => {
         postId: post._id,
         like,
       });
-      console.log("===  like res", res);
       setPost({ ...post, likes: res.data.likes });
     }
   };
@@ -68,8 +67,6 @@ const Detail = ({ postDetails }: IProps) => {
           userId: userProfile._id,
           comment,
         });
-        console.log("===  comment res", res);
-
         setPost({ ...post, comments: res.data.comments });
         setComment("");
         setIsPostingComment(false);
