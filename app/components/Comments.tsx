@@ -31,6 +31,8 @@ const Comments = ({
   isPostingComment,
 }: IProps) => {
   const { allUsers, userProfile }: any = useAuthStore();
+  console.log("===  userProfile", userProfile);
+  console.log("===  allUsers", allUsers);
 
   return (
     <div className="border-t-2 border-gray-200 pt-4 px-10 mt-4 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]">
@@ -51,7 +53,6 @@ const Comments = ({
                               className="rounded-full cursor-pointer"
                               src={user.image}
                               alt="user-profile"
-                              layout="responsive"
                             />
                           </div>
 
@@ -80,11 +81,14 @@ const Comments = ({
           <form onSubmit={addComment} className="flex gap-4">
             <input
               value={comment}
-              onChange={(e) => setComment(e.target.value.trim())}
+              onChange={(e) => setComment(e.target.value)}
               className="bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[700px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg"
               placeholder="Add comment.."
             />
-            <button className="text-md text-gray-400 " onClick={addComment}>
+            <button
+              className="text-md text-black bg-slate-200 hover:bg-slate-300 rounded-lg px-2"
+              onClick={addComment}
+            >
               {isPostingComment ? "Commenting..." : "Comment"}
             </button>
           </form>

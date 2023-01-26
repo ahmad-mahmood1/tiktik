@@ -5,8 +5,6 @@ import Link from "next/link";
 import { GoVerified } from "react-icons/go";
 import { IUser } from "../types";
 
-// import { IUser } from "../types";
-
 interface IProps {
   fetchAllUsers: () => void;
   allUsers: IUser[];
@@ -29,7 +27,7 @@ const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
       <div>
         {users?.slice(0, 6).map((user: IUser) => (
           <Link href={`/profile/${user._id}`} key={user._id}>
-            <div className="flex gap-3 hover:bg-primary p-2 cursor-pointer font-semibold rounded">
+            <div className="flex gap-3 hover:bg-primary p-2 cursor-pointer font-semibold rounded overflow-hidden">
               <div className="w-8 h-8">
                 <Image
                   width={34}
@@ -37,7 +35,6 @@ const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
                   className="rounded-full"
                   src={user.image}
                   alt="user-profile"
-                  layout="responsive"
                 />
               </div>
 

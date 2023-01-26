@@ -18,6 +18,7 @@ interface IProps {
 }
 
 const Detail = ({ postDetails }: IProps) => {
+  console.log("===  postDetails", postDetails);
   const [post, setPost] = useState<Video>(postDetails);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isVideoMuted, setIsVideoMuted] = useState<boolean>(false);
