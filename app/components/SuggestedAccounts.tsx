@@ -12,7 +12,7 @@ interface IProps {
 
 const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
   useEffect(() => {
-    fetchAllUsers();
+    !allUsers && fetchAllUsers();
   }, [fetchAllUsers]);
 
   const users = allUsers
